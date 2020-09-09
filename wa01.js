@@ -23,7 +23,7 @@ function getFile(item) {
     let file = item.replace("https://parsons.nyc/aa/", "").replace(".html", "");
     request(item, function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            fs.writeFileSync(file + ".txt", body);
+            fs.writeFileSync('/home/ec2-user/environment/data/' + file + ".txt", body);
             console.log("Just wrote file from " + item);
         }
         else {
